@@ -6,7 +6,10 @@ export type Welcome = {
   featured: {
     _ref: string;
     _type: "reference";
-    name: string; // Add the name property to access the name of the referenced project
+    name: string;
+    slug: {
+      current: string;
+    };
     image: {
       asset: {
         url: string; // Add the url property to access the URL of the image in the referenced project

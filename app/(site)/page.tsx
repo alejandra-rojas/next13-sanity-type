@@ -33,7 +33,9 @@ export default async function Home() {
           />
         )}
       </div>
-      <h3>{welcome.featured.name}</h3>
+      <Link href={`/projects/${welcome.featured.slug.current}`}>
+        <h3>{welcome.featured.name}</h3>
+      </Link>
 
       <h2 className="mt-24 font-bold text-gray-700 text-3xl">
         {welcome.projects}

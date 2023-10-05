@@ -12,6 +12,7 @@ export async function getWelcome(): Promise<Welcome> {
     subtitle,
     "featured": featured_project->{
       name,
+      slug,
       image {
         asset-> {
           url
