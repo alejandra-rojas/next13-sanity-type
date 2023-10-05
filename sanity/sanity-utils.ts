@@ -2,6 +2,17 @@ import { Project } from "@/types/Project";
 import { createClient, groq } from "next-sanity";
 import clientConfig from "./config/client-config";
 import { Page } from "@/types/Page";
+import { Welcome } from "@/types/Welcome";
+
+export async function getWelcome(): Promise<Welcome> {
+  return createClient(clientConfig).fetch(groq`*[_type == "welcome"]{
+    _id,
+    _createdAt,
+    title,
+    subtitle,
+    projects
+  }[0]`);
+}
 
 export async function getProjects(): Promise<Project[]> {
   return createClient(clientConfig).fetch(groq`*[_type == "project"]{

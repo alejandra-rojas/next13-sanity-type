@@ -6,8 +6,8 @@ export const structure = (S) =>
     .items([
       S.listItem()
         .title("Welcome screen")
-        .id("hello")
-        .child(S.document().schemaType("hello").documentId("hello")),
+        .id("welcome")
+        .child(S.document().schemaType("welcome").documentId("welcome")),
       S.divider(),
       ...S.documentTypeListItems().filter(
         (item: { getId: () => string }) =>
