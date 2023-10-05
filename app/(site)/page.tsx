@@ -4,7 +4,7 @@ import Link from "next/link";
 
 export default async function Home() {
   const projects = await getProjects();
-  console.log(projects);
+  //console.log(projects);
 
   const welcome = await getWelcome();
   console.log(welcome);
@@ -18,6 +18,23 @@ export default async function Home() {
         </span>
       </h1>
       <p className="mt-3 text-xl text-gray-900">{welcome.subtitle}</p>
+
+      <h2 className="mt-24 font-bold text-gray-700 text-3xl">
+        Featured project
+      </h2>
+      <div>
+        {welcome.featured.image && (
+          <Image
+            src={welcome.featured.image.asset.url}
+            alt={welcome.featured.name}
+            width={750}
+            height={300}
+            className="object-cover rounded-lg border border-gray-500"
+          />
+        )}
+      </div>
+      <h3>{welcome.featured.name}</h3>
+
       <h2 className="mt-24 font-bold text-gray-700 text-3xl">
         {welcome.projects}
       </h2>

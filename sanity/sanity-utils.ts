@@ -10,6 +10,14 @@ export async function getWelcome(): Promise<Welcome> {
     _createdAt,
     title,
     subtitle,
+    "featured": featured_project->{
+      name,
+      image {
+        asset-> {
+          url
+        }
+      }
+    },
     projects
   }[0]`);
 }
