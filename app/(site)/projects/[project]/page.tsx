@@ -1,6 +1,7 @@
 import { getProject } from "@/sanity/sanity-utils";
 import { PortableText } from "@portabletext/react";
 import Image from "next/image";
+import PageWrapper from "../../components/PageWrapper";
 
 type Props = {
   params: { project: string };
@@ -12,7 +13,7 @@ export default async function Project({ params }: Props) {
   console.log(project);
 
   return (
-    <div>
+    <PageWrapper>
       <header className="flex items-center justify-between">
         <h1 className="bg-gradient-to-r from-orange-400 via-red-500 to-purple-600 bg-clip-text text-transparent text-5xl drop-shadow font-extrabold">
           {project.name}
@@ -39,6 +40,6 @@ export default async function Project({ params }: Props) {
         height={1080}
         className="mt-10 border-2 border-gray-700 object-cover rounded-xl"
       />
-    </div>
+    </PageWrapper>
   );
 }
