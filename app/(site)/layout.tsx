@@ -1,6 +1,7 @@
 import "../globals.css";
 import Link from "next/link";
 import { getPages } from "@/sanity/sanity-utils";
+import Nav from "./components/Nav";
 
 export const metadata = {
   title: "My Awesome Site",
@@ -25,7 +26,8 @@ export default async function RootLayout({
             Back to front
           </Link>
           <div className="flex items-center gap-5 text-sm text-gray-600">
-            {pages.map((page) => (
+            <Nav pages={pages} />
+            {/* {pages.map((page) => (
               <Link
                 key={page._id}
                 href={`/${page.slug}`}
@@ -33,7 +35,7 @@ export default async function RootLayout({
               >
                 {page.title}
               </Link>
-            ))}
+            ))} */}
           </div>
         </header>
         <main className="py-20">{children}</main>
