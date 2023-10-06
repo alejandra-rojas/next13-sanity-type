@@ -1,6 +1,7 @@
 import { getProjects, getWelcome } from "@/sanity/sanity-utils";
 import Image from "next/image";
 import Link from "next/link";
+import Title from "./components/Title";
 
 export default async function Home() {
   const projects = await getProjects();
@@ -12,10 +13,10 @@ export default async function Home() {
   return (
     <div className="max-w-5xl mx-auto py-20">
       <h1 className="text-7xl font-extrabold">
-        {welcome.title}
-        <span className="bg-gradient-to-r from-orange-600 to-purple-950 bg-clip-text text-transparent">
+        <Title text={welcome.title} className="text-7xl font-extrabold" />
+        {/*         <span className="bg-gradient-to-r from-orange-600 to-purple-950 bg-clip-text text-transparent">
           Alejandra
-        </span>
+        </span> */}
       </h1>
       <p className="mt-3 text-xl text-gray-900">{welcome.subtitle}</p>
 
